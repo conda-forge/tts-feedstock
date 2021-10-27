@@ -1,5 +1,5 @@
 {% set name = "TTS" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/TTS-{{ version }}.tar.gz
-  sha256: 590f30ecc74feb1e02a31c855b63c8923a70c3a5f6db95a8e725fb4f2838edaf
+  sha256: 81827a99c955ea0da08bb29da4b4b60e1010b9dbf2f8cae370dead059a36e10d
 
 build:
   number: 0
