@@ -1,5 +1,5 @@
 {% set name = "TTS" %}
-{% set version = "0.3.1" %}
+{% set version = "0.4.1" %}
 
 
 package:
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/TTS-{{ version }}.tar.gz
-  sha256: 46fb359f7d586fecc0b5cecf75a689fce42e03291ef9d89571e8881b07d4410d
+  sha256: 81827a99c955ea0da08bb29da4b4b60e1010b9dbf2f8cae370dead059a36e10d
 
 build:
   number: 0
-  skip: true   # [py>=310 or py2k]
+  skip: true  # [py>=310 or py2k]
   entry_points:
     - tts=TTS.bin.synthesize:main
     - tts-server = TTS.server.server:main
