@@ -12,7 +12,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [py>=310 or py2k]
+  skip: true  # [py>=310 or py2k or win]
   entry_points:
     - tts=TTS.bin.synthesize:main
     - tts-server = TTS.server.server:main
