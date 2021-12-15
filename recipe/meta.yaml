@@ -33,7 +33,7 @@ requirements:
     - flask
     - fsspec >=2021.04.0
     - gdown
-    - gruut ~=1.2.0
+    - gruut ~=2.0.0
     - inflect
     - jieba
     - librosa ==0.8.0
