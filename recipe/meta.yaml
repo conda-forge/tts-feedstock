@@ -1,5 +1,5 @@
 {% set name = "TTS" %}
-{% set version = "0.4.1" %}
+{% set version = "0.4.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/TTS-{{ version }}.tar.gz
-  sha256: 81827a99c955ea0da08bb29da4b4b60e1010b9dbf2f8cae370dead059a36e10d
+  sha256: e6ee85871292bb6db674d075d274067428e382caffe6d3f561840e6b09075de1
 
 build:
   number: 0
@@ -33,7 +33,7 @@ requirements:
     - flask
     - fsspec >=2021.04.0
     - gdown
-    - gruut ~=1.2.0
+    - gruut ~=2.0.0
     - inflect
     - jieba
     - librosa ==0.8.0
