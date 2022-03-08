@@ -32,7 +32,6 @@ requirements:
     - cython
     - flask
     - fsspec >=2021.04.0
-    - gdown
     - gruut ~=2.0.0
     - inflect
     - jieba
@@ -47,7 +46,7 @@ requirements:
     - python
     - pyworld
     - pyyaml
-    - scipy >=0.19.0
+    - scipy >=1.4.0
     - pysoundfile
     - tensorboardx
     - pytorch >=1.7
