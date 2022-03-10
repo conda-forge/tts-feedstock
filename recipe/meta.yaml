@@ -29,6 +29,7 @@ requirements:
   run:
     - anyascii
     - coqpit
+    - coqui-trainer
     - cython
     - flask
     - fsspec >=2021.04.0
@@ -54,6 +55,7 @@ requirements:
     - umap-learn ==0.5.1
     - unidic-lite ==1.0.8
     - {{ pin_compatible('numpy') }}
+    - webrtcvad
 
 test:
   imports:
