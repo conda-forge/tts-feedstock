@@ -1,5 +1,5 @@
 {% set name = "TTS" %}
-{% set version = "0.4.2" %}
+{% set version = "0.5.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/TTS-{{ version }}.tar.gz
-  sha256: e6ee85871292bb6db674d075d274067428e382caffe6d3f561840e6b09075de1
+  sha256: 9a27895e9f28ad79011d7ab4b325cf1d7eeb8508cdf327a13364ca40b4d98c19
 
 build:
   number: 0
@@ -23,38 +23,38 @@ requirements:
     - {{ compiler('c') }}
   host:
     - cython
-    - numpy
+    - numpy ==1.19.5
     - pip
     - python
   run:
-    - anyascii
-    - coqpit
+    - python
     - cython
     - flask
-    - fsspec >=2021.04.0
     - gdown
-    - gruut ~=2.0.0
     - inflect
     - jieba
     - librosa ==0.8.0
     - matplotlib-base
-    - mecab-python3 ==1.0.3
-    - numba ==0.53
     - numpy ==1.19.5
     - pandas
     - pypinyin
     - pysbd
-    - python
-    - pyworld
     - pyyaml
     - scipy >=0.19.0
     - pysoundfile
     - tensorboardx
     - pytorch >=1.7
     - tqdm
+    - numba ==0.53
     - umap-learn ==0.5.1
+    - anyascii
+    - coqpit
+    - mecab-python3 ==1.0.3
     - unidic-lite ==1.0.8
-    - {{ pin_compatible('numpy') }}
+    - gruut ~=2.0.0
+    - fsspec >=2021.04.0
+    - pyworld
+    - webrtcvad
 
 test:
   imports:
