@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/TTS-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/TTS-{{ version }}.tar.gz
   sha256: ad3aa334fd6c30733ff4d733d51818008f897d1e31d21dcd264cadeb11d43fbd
 
 build:
@@ -26,6 +26,8 @@ requirements:
     - numpy
     - pip
     - python
+    - setuptools
+    - wheel
   run:
     - anyascii
     - coqpit
