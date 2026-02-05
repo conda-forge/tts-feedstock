@@ -32,11 +32,12 @@ requirements:
     - python
     - setuptools
     - wheel
-    - packaging >=23.1
+    - packaging
   run:
     - python
-    - {{ pin_compatible('numpy') }}
-    - cython ~=0.29.30
+    - numpy ==1.22.0  # [py<=310]
+    - numpy >=1.24.3  # [py>310]
+    - cython >=0.29.30
     - scipy >=1.11.2
     - pytorch >=2.1
     - torchaudio
@@ -52,7 +53,7 @@ requirements:
     - fsspec >=2023.6.0
     - aiohttp >=3.8.1
     - packaging >=23.1
-    - flask
+    - flask >=2.0.1
     - pysbd >=0.3.4
     - umap-learn >=0.5.1
     - pandas >=1.4,<2.0
@@ -72,12 +73,13 @@ requirements:
     - einops >=0.6.0
     - transformers >=4.33.0
     - encodec >=0.1.1
-    - gdown
     - unidecode >=1.3.2
     - num2words
     - spacy >=3
+    # From spacy[ja]
     - sudachipy >=0.5.2,!=0.6.1
-    - sudachidict-core >=20211220
+    - sudachidict_core >=20211220
+    
 
 test:
   imports:
