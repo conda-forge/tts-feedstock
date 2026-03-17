@@ -11,7 +11,7 @@ source:
   sha256: e6ee85871292bb6db674d075d274067428e382caffe6d3f561840e6b09075de1
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py>=310 or py2k or win]
   entry_points:
     - tts=TTS.bin.synthesize:main
