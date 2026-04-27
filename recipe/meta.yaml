@@ -1,5 +1,5 @@
 {% set name = "TTS" %}
-{% set version = "0.4.2" %}
+{% set version = "0.22.0" %}
 
 
 package:
@@ -7,12 +7,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/TTS-{{ version }}.tar.gz
-  sha256: e6ee85871292bb6db674d075d274067428e382caffe6d3f561840e6b09075de1
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/TTS-{{ version }}.tar.gz
+  sha256: b91119da7ff2ae7b3dae7328edf9af4db3b48c40eb4ce15d11ed8f5ee9bd7086
 
 build:
   number: 0
-  skip: true  # [py>=310 or py2k or win]
+  skip: true  # [py>=312 or win]
   entry_points:
     - tts=TTS.bin.synthesize:main
     - tts-server = TTS.server.server:main
@@ -20,41 +20,66 @@ build:
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
   host:
-    - cython
-    - numpy
+    - cython ~=0.29.30
+    - numpy >=1.22.0
     - pip
     - python
+    - setuptools
+    - wheel
+    - packaging
   run:
-    - anyascii
-    - coqpit
-    - cython
-    - flask
-    - fsspec >=2021.04.0
-    - gdown
-    - gruut ~=2.0.0
-    - inflect
-    - jieba
-    - librosa ==0.8.0
-    - matplotlib-base
-    - mecab-python3 ==1.0.3
-    - numba ==0.53
-    - numpy ==1.19.5
-    - pandas
-    - pypinyin
-    - pysbd
     - python
-    - pyworld
-    - pyyaml
-    - scipy >=0.19.0
-    - pysoundfile
-    - tensorboardx
-    - pytorch >=1.7
-    - tqdm
-    - umap-learn ==0.5.1
-    - unidic-lite ==1.0.8
-    - {{ pin_compatible('numpy') }}
+    - numpy ==1.22.0  # [py<=310]
+    - numpy >=1.24.3  # [py>310]
+    - cython >=0.29.30
+    - scipy >=1.11.2
+    - pytorch >=2.1
+    - torchaudio
+    - pysoundfile >=0.12.0
+    - librosa >=0.10.0
+    - scikit-learn >=1.3.0
+    - numba >=0.57.0
+    - inflect >=5.6.0
+    - tqdm >=4.64.1
+    - anyascii
+    - coqpit >=0.3.0
+    - pyyaml >=6.0
+    - fsspec >=2023.6.0
+    - aiohttp >=3.8.1
+    - packaging >=23.1
+    - flask >=2.0.1
+    - pysbd >=0.3.4
+    - umap-learn >=0.5.1
+    - pandas >=1.4,<2.0
+    - matplotlib-base >=3.7.0
+    - coqui-trainer >=0.0.32
+    - coqpit >=0.0.16
+    - jieba
+    - pypinyin
+    - hangul_romanize
+    - gruut ==2.2.3
+    - jamo
+    - nltk
+    - g2pkk >=0.1.1
+    - bangla
+    - bnnumerizer
+    - bnunicodenormalizer
+    - einops >=0.6.0
+    - transformers >=4.33.0
+    - encodec >=0.1.1
+    - unidecode >=1.3.2
+    - num2words
+    - spacy >=3
+    # From spacy[ja]
+    - sudachipy >=0.5.2,!=0.6.1
+    - sudachidict_core >=20211220
+    
 
 test:
   imports:
